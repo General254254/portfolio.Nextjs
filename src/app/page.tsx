@@ -1,7 +1,7 @@
 // app/page.tsx or pages/index.tsx
 
 import Navbar from "./components/Navbar";
-import AboutPage from "./components/About";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -34,46 +34,30 @@ export default function Home() {
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               I&apos;m Mark Nambuva, a Full-Stack & Network Engineer passionate about building scalable web applications and network solutions.
             </p>
-            <div className="space-x-4 mt-8">
-              <a 
-                href="#about" 
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              <Link 
+                href="/about" 
                 className="inline-block bg-green-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-green-400 transition"
               >
                 Learn More
-              </a>
-              <a 
-                href="#contact" 
+              </Link>
+              <Link 
+                href="/skills" 
+                className="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-400 transition"
+              >
+                View Skills
+              </Link>
+              <Link 
+                href="/contact" 
                 className="inline-block border border-green-500 text-green-500 px-6 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-black transition"
               >
                 Get in Touch
-              </a>
+              </Link>
             </div>
           </div>
         </section>
       </div>
 
-      {/* About Section - Positioned below the fold */}
-      <div id="about" className="relative z-10 min-h-screen">
-        <AboutPage />
-      </div>
-
-      {/* Contact Section */}
-      <div id="contact" className="bg-gray-900 py-16 relative z-10">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-green-500 mb-8">Get In Touch</h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            I&apos;m always open to discussing new opportunities and interesting projects.
-          </p>
-          <div className="space-y-4">
-            <p className="text-gray-400">
-              <strong className="text-white">Email:</strong> marknambuva@example.com
-            </p>
-            <p className="text-gray-400">
-              <strong className="text-white">Location:</strong> Kenya
-            </p>
-          </div>
-        </div>
-      </div>
     </main>
   );
 }
