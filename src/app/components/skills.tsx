@@ -52,7 +52,7 @@ export default function Skills() {
     <section className="min-h-screen relative py-24 px-6">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <div 
+        <div
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: "url('/skills.jpg')",
@@ -61,7 +61,7 @@ export default function Skills() {
         {/* Dark overlay for sophisticated aesthetic */}
         <div className="absolute inset-0 bg-black/85 backdrop-blur-sm" />
       </div>
-      
+
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-20">
@@ -81,19 +81,19 @@ export default function Skills() {
               <h3 className="text-3xl font-light text-white mb-8 text-center">
                 {skillCategory.category}
               </h3>
-              
+
               {/* Skills Cards Grid */}
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 {skillCategory.items.map((skill, skillIndex) => (
-                  <div 
+                  <div
                     key={skillIndex}
                     className="group p-4 hover:scale-105 transition-all duration-300 ease-out"
                   >
                     {/* Skill Logo */}
                     <div className="text-center mb-4">
                       <div className="w-12 h-12 mx-auto mb-2 group-hover:scale-110 transition-transform duration-200">
-                        <img 
-                          src={skill.logo} 
+                        <img
+                          src={skill.logo}
                           alt={`${skill.name} logo`}
                           className="w-full h-full object-contain"
                           onError={(e) => {
@@ -102,22 +102,21 @@ export default function Skills() {
                         />
                       </div>
                     </div>
-                    
+
                     {/* Skill Name */}
-                    <h4 className="text-sm font-medium text-gray-900 text-center mb-3 leading-tight">
+                    <h4 className="text-sm font-medium text-green-500 text-center mb-3 leading-tight">
                       {skill.name}
                     </h4>
-                    
+
                     {/* Skill Level Dots */}
                     <div className="flex justify-center space-x-1">
                       {[...Array(5)].map((_, dotIndex) => (
                         <div
                           key={dotIndex}
-                          className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                            dotIndex < Math.ceil(skill.level / 20)
-                              ? 'bg-blue-500'
+                          className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${dotIndex < Math.ceil(skill.level / 20)
+                              ? 'bg-green-500'
                               : 'bg-gray-200'
-                          }`}
+                            }`}
                         />
                       ))}
                     </div>
